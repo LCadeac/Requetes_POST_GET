@@ -28,7 +28,15 @@ class App {
         message: 'Hello World!'
       });
     });
+	
+	router.post('/', (req, res, next) => {
+      res.json({
+        message: req.body.info
+      });
+    });
+	
     this.express.use('/', router);
+	this.express.listen(8080);
   }
 
 }
